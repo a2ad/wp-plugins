@@ -20,6 +20,9 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+
+		<?php the_post_thumbnail(); ?>
+
 		<?php the_content(); ?>
 
 		<?php
