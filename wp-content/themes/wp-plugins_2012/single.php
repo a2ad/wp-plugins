@@ -1,32 +1,28 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * Single
+ *
+ * Loop container for single post content
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Foundation, for WordPress
+ * @since Foundation, for WordPress 1.0
  */
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+    <!-- Main Content -->
+    <div class="nine columns" role="content">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-					<nav id="nav-single">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
-					</nav><!-- #nav-single -->
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'single' ); ?>
+			<?php endwhile; ?>
+			
+		<?php endif; ?>
 
-					<?php get_template_part( 'content', 'single' ); ?>
-
-					<?php comments_template( '', true ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
+    </div>
+    <!-- End Main Content -->
 
 <?php get_footer(); ?>

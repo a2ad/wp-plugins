@@ -1,35 +1,28 @@
 <?php
 /**
- * The template for displaying the footer.
+ * Footer
  *
- * Contains the closing of the id=main div and all content after
+ * Displays content shown in the footer section
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Foundation, for WordPress
+ * @since Foundation, for WordPress 1.0
  */
 ?>
 
-	</div><!-- #main -->
+</div>
+<!-- End Page -->
 
-	<footer id="colophon" role="contentinfo">
+<!-- Footer -->
+<footer class="row">
 
-			<?php
-				/* A sidebar in the footer? Yep. You can can customize
-				 * your footer with three columns of widgets.
-				 */
-				if ( ! is_404() )
-					get_sidebar( 'footer' );
-			?>
+<?php if ( dynamic_sidebar('Sidebar Footer One') && dynamic_sidebar('Sidebar Footer Two') && dynamic_sidebar('Sidebar Footer Three') && dynamic_sidebar('Sidebar Footer Four')  ) : else : ?>
 
-			<div id="site-generator">
-				<?php do_action( 'twentyeleven_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?></a>
-			</div>
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<?php endif; ?>
+
+</footer>
+<!-- End Footer -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

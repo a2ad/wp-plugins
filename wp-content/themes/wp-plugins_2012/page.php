@@ -1,31 +1,29 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Loop container for page content
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Foundation, for WordPress
+ * @since Foundation, for WordPress 1.0
  */
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+    <!-- Main Content -->
+    <div class="nine columns" role="content">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-					<?php get_template_part( 'content', 'page' ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+			<?php endwhile; ?>
+			
+		<?php endif; ?>
 
-					<?php comments_template( '', true ); ?>
+    </div>
+    <!-- End Main Content -->
 
-				<?php endwhile; // end of the loop. ?>
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

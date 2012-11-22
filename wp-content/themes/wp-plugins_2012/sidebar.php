@@ -1,36 +1,24 @@
 <?php
 /**
- * The Sidebar containing the main widget area.
+ * Sidebar
+ *
+ * Content for our sidebar, provides prompt for logged in users to create widgets
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Foundation, for WordPress
+ * @since Foundation, for WordPress 1.0
  */
-
-$options = twentyeleven_get_theme_options();
-$current_layout = $options['theme_layout'];
-
-if ( 'content' != $current_layout ) :
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-				<aside id="archives" class="widget">
-					<h3 class="widget-title"><?php _e( 'Archives', 'twentyeleven' ); ?></h3>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
+<!-- Sidebar -->
+<aside class="three columns">
 
-				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php _e( 'Meta', 'twentyeleven' ); ?></h3>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
+<?php if ( dynamic_sidebar('Sidebar Right') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 
-			<?php endif; // end sidebar widget area ?>
-		</div><!-- #secondary .widget-area -->
+	<h5><?php _e( 'No widgets found.', 'foundaton' ); ?></h5>
+	<p><?php printf( __( 'It seems you don\'t have any widgets in your sidebar! Would you like to %s now?', 'foundation' ), '<a href=" '. get_admin_url( '', 'widgets.php' ) .' ">populate your sidebar</a>' ); ?></p>
+
 <?php endif; ?>
+
+</aside>
+<!-- End Sidebar -->
