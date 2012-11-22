@@ -41,8 +41,6 @@
 			<h3 class="subheader"><?php bloginfo('description'); ?></h3>
 		</hgroup>
 
-		<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'nav-bar', 'fallback_cb' => 'foundation_page_menu', 'container' => 'nav', 'container_class' => 'twelve columns', 'walker' => new foundation_navigation() ) ); ?>
-
 	</header>
 
 <!-- Begin Page -->

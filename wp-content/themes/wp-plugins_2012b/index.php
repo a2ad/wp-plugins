@@ -14,23 +14,36 @@ get_header(); ?>
     <!-- Main Content -->
     <div class="nine columns" role="content">
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+    		// get all the categories from the database
+    		$cats = get_categories(); 
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+        	// loop through the categries
+        	foreach ($cats as $cat) {
 
-		<?php else : ?>
-
-			<h2><?php _e('No posts.', 'foundation' ); ?></h2>
-			<p class="lead"><?php _e('Sorry about this, I couldn\'t seem to find what you were looking for.', 'foundation' ); ?></p>
-			
-		<?php endif; ?>
-
-		<?php foundation_pagination(); ?>
+                // setup the cateogory ID
+                $cat_id= $cat->term_id;
+                // Make a header for the cateogry
+                echo "<h2>".$cat->name."</h2>";
+                // create a custom wordpress query
+                query_posts("cat=$cat_id&post_per_page=100");
+        ?>
+        	<ul>
+        <?php
+                // start the wordpress loop!
+				if (have_posts()) : while (have_posts()) : the_post();
+        ?>
+            	
+            	<li><a href="<?php the_permalink();?>"><?php the_title(); ?></a></li>
+        <?php	
+			 	endwhile; endif; // done our wordpress loop. Will start again for each category
+		?>
+			</ul>
+		<?php
+		 	} // done the foreach statement 
+		?>
 
     </div>
     <!-- End Main Content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
