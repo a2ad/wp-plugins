@@ -22,6 +22,10 @@ Text Domain: foundation
 :: Page Name 2
 */
 
+#header { text-align: center; background-color: #000; padding: 1em; margin-bottom: 30px; }
+#header h1 { text-transform: uppercase; font-size: 28px; font-weight: bold; margin: 0; }
+h3.subheader { font-size: 18px; font-weight: bold; margin-bottom: 0;}
+
 /* -----------------------------------------
    Images
 ----------------------------------------- */
@@ -44,6 +48,33 @@ img.size-full {
    Posts
 ----------------------------------------- */
 
+.image-column img { 
+  float: right;
+}
+
+.post-header {
+  margin-bottom: 20px;
+}
+.post-header h2 {
+  margin: 5px 0 10px;
+}
+.post-header h6 {
+  font-weight: normal;
+}
+.post-header p {
+  margin-bottom: 0;
+}
+.post-header p a {
+  color: #FFF;
+  font-weight: normal;
+}
+.post-header p .secondary a {
+  color: #666;
+}
+.post-header p .label {
+  margin-left: 5px;
+}
+
 .author-box h5 {margin-top:0px;}
 .author-box .author_gravatar {margin-right:10px;}
 .author-box p {font-size:14px; font-size:1.4rem;}
@@ -53,12 +84,21 @@ article .th {margin-bottom:10px; margin-bottom:1rem;}
 .alignleft {float:left;}
 .alignright {float:right;}
 
+#respond {
+  margin-top: 20px; 
+}
+
+
 /* -----------------------------------------
    Typography
 ----------------------------------------- */
 
-body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;}
-h1,h2,h3,h4,h5,h6 {font-weight:300;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;}
+h1,h2,h3,h4,h5,h6 { margin: 0 0 10px;}
+
+p {
+  font-size: 16px;
+}
 
 .site-title .subheader {margin-bottom:0;}
 

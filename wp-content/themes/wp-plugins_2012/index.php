@@ -12,7 +12,7 @@
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="content">
+    <div class="ten centered columns" role="content">
 
 		<?php
     		// get all the categories from the database

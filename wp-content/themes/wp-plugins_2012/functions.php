@@ -256,4 +256,15 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 require( get_template_directory() . '/inc/shortcodes.php' );
 
+/**
+ * Remove o campo website dos comentários
+ */
+add_filter('comment_form_default_fields', 'url_filtered');
+function url_filtered($fields)
+{
+if(isset($fields['url']))
+unset($fields['url']);
+return $fields;
+}
+
 ?>

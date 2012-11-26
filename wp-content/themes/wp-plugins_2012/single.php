@@ -12,14 +12,16 @@
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="nine columns" role="content">
+    <divrole="content">
 
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
+				
 				<?php get_template_part( 'content', 'single' ); ?>
+
 			<?php endwhile; ?>
-			
+
 		<?php endif; ?>
 
     </div>

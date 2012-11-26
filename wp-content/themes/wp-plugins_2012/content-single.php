@@ -10,32 +10,37 @@
  */
 ?>
 
-<article>
+<article class="twelve centered columns">
 
-	<header>
+	<header class="post-header panel radius">
 		<hgroup>
-			<h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'foundation' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<h6><?php _e('Written by', 'foundation' );?> <?php the_author_link(); ?> on <?php the_time(get_option('date_format')); ?></h6>
+			<p><span class="round label"><?php the_category(', '); ?></span><?php the_tags('<span class="secondary round label">','</span><span class="	secondary round label">','</span>'); ?></p>
+			<h2><?php the_title(); ?></h2>
+			<h6><?php _e('Avaliado por', 'foundation' );?> <?php the_author_link(); ?> em <?php the_time(get_option('date_format')); ?></h6>
 		</hgroup>
-	</header>
+	</header>	
 
-	<?php if ( has_post_thumbnail()) : ?>
-	<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
-	<?php endif; ?>
-	
-	<?php the_content(); ?>
+	<div class="row">
+		<div class="four columns image-column">
+			<?php if ( has_post_thumbnail()) : ?>
+				<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+			<?php endif; ?>
+		</div>	
 
-	<footer>
+		<div class="eight columns">
+			<?php the_content(); ?>
+			<?php
+				$value = get_field( "download" );
+				if($value) {
+					echo "<a class='radius button' href='".$value."'>Acessar a página do plugin</a>";
+				}
+			?>	
+			<footer>
+				<?php comments_template(); ?>
+			</footer>
+		</div>
+	</div>
 
-		<p><?php wp_link_pages(); ?></p>
-
-		<p><?php _e('Posted Under:', 'foundation' );?> <?php the_category(', '); ?></p>
-		<?php the_tags('<span class="radius standard label">','</span><span class="label">','</span>'); ?>
-
-		<?php get_template_part('author-box'); ?>
-		<?php comments_template(); ?>
-
-	</footer>
 
 </article>
 
