@@ -20,7 +20,7 @@ get_header(); ?>
 
         	// loop through the categries
         	foreach ($cats as $cat) {
-
+                echo "<div>";
                 // setup the cateogory ID
                 $cat_id= $cat->term_id;
                 // Make a header for the cateogry
@@ -28,18 +28,21 @@ get_header(); ?>
                 // create a custom wordpress query
                 query_posts("cat=$cat_id&post_per_page=100");
         ?>
-        	<ul>
+        	<ul class="twelve side-nav">
         <?php
                 // start the wordpress loop!
 				if (have_posts()) : while (have_posts()) : the_post();
         ?>
             	
             	<li><a href="<?php the_permalink();?>"><?php the_title(); ?></a></li>
+                <li class="divider"></li>
         <?php	
 			 	endwhile; endif; // done our wordpress loop. Will start again for each category
 		?>
 			</ul>
+
 		<?php
+            echo "</div>";
 		 	} // done the foreach statement 
 		?>
 

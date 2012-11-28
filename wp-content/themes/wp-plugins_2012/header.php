@@ -20,13 +20,14 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/stylesheets/fontface/fontface.css">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width" />
 
-<title><?php wp_title(); ?></title>
+<title><?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' ); $site_description = get_bloginfo( 'description', 'display' ); if ( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description"; if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );	?></title>
 
 <?php wp_head(); ?>
 
