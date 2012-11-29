@@ -102,6 +102,15 @@ p {
 
 .site-title .subheader {margin-bottom:0;}
 
+.container h2{
+  text-align: center;
+  font-size: 22px;
+  line-height: 24px;
+}
+ul.side-nav{
+  text-align: center;
+}
+
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */

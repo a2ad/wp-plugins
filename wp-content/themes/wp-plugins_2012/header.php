@@ -45,4 +45,4 @@
 	</header>
 
 <!-- Begin Page -->
-<div class="row">
+<div class="container">
