@@ -46,3 +46,10 @@
   }
 
 })(jQuery, this);
+
+$('.reply a').each(function(){
+    $(this).addClass('tiny button radius secondary');
+});
+$('.form-submit #submit').each(function(){
+    $(this).addClass('medium button radius');
+});

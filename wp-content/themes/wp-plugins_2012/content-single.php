@@ -36,7 +36,7 @@
 				}
 			?>	
 			<footer>
-				<?php comments_template(); ?>
+				<?php comments_template('', true ); ?>
 			</footer>
 		</div>
 	</div>

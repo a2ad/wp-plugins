@@ -11,20 +11,20 @@
 
 get_header(); ?>
 
-    <!-- Main Content -->
-    <divrole="content">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-				
-				<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php endwhile; ?>
-
-		<?php endif; ?>
-
-    </div>
-    <!-- End Main Content -->
+	<!-- Main Content -->
+	<div role="content">
+	
+			<?php if ( have_posts() ) : ?>
+	
+				<?php while ( have_posts() ) : the_post(); ?>
+					
+					<?php get_template_part( 'content', 'single' ); ?>
+	
+				<?php endwhile; ?>
+	
+			<?php endif; ?>
+	
+	</div>
+	<!-- End Main Content -->
 
 <?php get_footer(); ?>

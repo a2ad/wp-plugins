@@ -46,3 +46,4 @@
 
 <!-- Begin Page -->
 <div class="container">
+	<div class="row">

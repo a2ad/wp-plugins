@@ -10,7 +10,9 @@
  */
 ?>
 
-</div>
+	</div><!-- row -->
+</div><!-- container -->
+
 <!-- End Page -->
 
 <!-- Footer -->
