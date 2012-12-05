@@ -26,6 +26,19 @@ Text Domain: foundation
 #header h1 { text-transform: uppercase; font-size: 28px; font-weight: bold; margin: 0; }
 h3.subheader { font-size: 18px; font-weight: bold; margin-bottom: 0;}
 
+div.plugins-list {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+div.plugins-list ul {
+  list-style-position: inside;
+}
+div.plugins-list ul li {
+  padding-left: 10px;
+  list-style-type: square;
+}
+
 /* -----------------------------------------
    Images
    ----------------------------------------- */
@@ -103,12 +116,8 @@ img.size-full {
   .site-title .subheader {margin-bottom:0;}
 
   .home .container h2{
-      text-align: center;
       font-size: 22px;
       line-height: 24px;
-  }
-  ul.side-nav{
-      text-align: center;
   }
 
 
