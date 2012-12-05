@@ -31,6 +31,9 @@
 
 <?php wp_head(); ?>
 
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/javascripts/jquery-github-widget/css/style.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/javascripts/jquery-github-widget/css/skin.css">
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -38,8 +41,19 @@
 	<header id="header">
 
 		<hgroup>
-			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="header"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h3 class="subheader"><?php bloginfo('description'); ?></h3>
+
+			<div class="projects">
+				<div class="github-widget" data-repo="a2comunicacao/wp-plugins"></div>
+			</div>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+			<script src="<?php echo get_template_directory_uri(); ?>/javascripts/jquery-github-widget/js/jquery.github.widget.js"></script>
+			<script>
+				$('.github-widget').githubWidget();
+			</script>
+
 		</hgroup>
 
 	</header>
