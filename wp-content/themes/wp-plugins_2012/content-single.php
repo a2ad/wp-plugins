@@ -16,7 +16,7 @@
 		<hgroup>
 			<p><span class="round label"><?php the_category(', '); ?></span><?php the_tags('<span class="secondary round label">','</span><span class="	secondary round label">','</span>'); ?></p>
 			<h2><?php the_title(); ?></h2>
-			<h6><?php _e('Avaliado por', 'foundation' );?> <?php the_author_link(); ?> em <?php the_time(get_option('date_format')); ?></h6>
+			<h6>Adicionado em <?php the_time(get_option('date_format')); ?></h6>
 		</hgroup>
 	</header>	
 
