@@ -58,16 +58,13 @@
             var $widget = $(' \
               <div class="github-box repo">  \
                   <div class="github-box-title"> \
-                      <h1> \
-                          <a class="repo" href="' + repo.url.replace('api.','').replace('repos/','') + '">' + repo.name + '</a> \
-                      </h1> \
                       <div class="github-stats"> \
                           <a class="watchers" href="' + repo.url.replace('api.','').replace('repos/','') + '/watchers">' + repo.watchers + '</a> \
                           <a class="forks" href="' + repo.url.replace('api.','').replace('repos/','') + '/forks">' + repo.forks + '</a> \
                       </div> \
                   </div> \
                   <div class="github-box-content"> \
-                      <p class="description">' + repo.description + ' &mdash; <a href="' + repo.url.replace('api.','').replace('repos/','') + '#readme">Read More</a></p> \
+                      <p class="description">' + repo.description + ' &mdash; <a href="' + repo.url.replace('api.','').replace('repos/','') + '#readme">Saiba mais</a></p> \
                       <p class="link"><a href="' + repo.homepage + '">' + repo.homepage + '</a></p> \
                   </div> \
                   <div class="github-box-download"> \
