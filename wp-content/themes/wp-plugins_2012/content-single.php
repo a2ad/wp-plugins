@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class="four columns image-column">
 			<?php if ( has_post_thumbnail()) : ?>
-				<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+				<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail('thumbnail'); ; ?></a>
 			<?php endif; ?>
 		</div>	
 
